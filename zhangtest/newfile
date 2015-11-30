@@ -1,19 +1,19 @@
 git 分布是版本控制系统
 
-创建一个git仓库
+1.创建一个git仓库
 mkdir filename 创建一个文件夹名称
 pwd 用于显示当前目录
 
-添加文件到git
+2.添加文件到git
 
 git add filename 文件名称
 git commit -m “提交的说明”
 
-git status 查看文件是否有修改
+3.git status 查看文件是否有修改
 
 采用 git diff filename 查看具体修改的内容   ，之后用git add 和git commit 提交文件
 
-版本回退
+4.版本回退
 
   查看历史记录 git log
   查看命令历史 git reflog
