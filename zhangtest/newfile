@@ -19,3 +19,10 @@ git commit -m “提交的说明”
   查看命令历史 git reflog
   
   回退的命名是git reset --hard HEAD^  或者 git reset --hard 版本号
+5.管理修改
+  git跟踪并管理的是修改，而非文件
+6.cat filename 功能是显示文件的内容
+	git checkout 撤销修改
+	git checkout --filename 作用是把文件在工作区的修改全部撤销：
+	（1）文件自修改后还没被放到暂存区，现在撤销，就是回到和版本库一模一样的状态；
+	（2）文件已添加到暂存区，之后又做了修改，现在撤销，就是回到添加到暂存区的状态。
