@@ -26,3 +26,13 @@ git commit -m “提交的说明”
 	git checkout --filename 作用是把文件在工作区的修改全部撤销：
 	（1）文件自修改后还没被放到暂存区，现在撤销，就是回到和版本库一模一样的状态；
 	（2）文件已添加到暂存区，之后又做了修改，现在撤销，就是回到添加到暂存区的状态。
+7.删除文件
+  （1）直接在文件夹中删除，并且提交，就行
+  （2）命令 rm filename ，之后
+       1）. 若真想把版本库中的文件删除，则需要执行 git rm filename ；git coommit -m “理由”
+	   2）. 若删错了，则需要 git checkout -- filename
+8.远程仓库
+   GitHub提供Git仓库托管服务，只要注册一个账号，就可以免费获得Git远程仓库
+   需要创建SSH Key：命令 ssh-keygen -t rsa -C “注册的邮箱”
+   生成的 .SSH 在C:/Doucments and Settings/Administrator/.ssh
+   注: -a 显示隐藏文件
