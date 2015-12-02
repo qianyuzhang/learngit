@@ -36,3 +36,13 @@ git commit -m “提交的说明”
    需要创建SSH Key：命令 ssh-keygen -t rsa -C “注册的邮箱”
    生成的 .SSH 在C:/Doucments and Settings/Administrator/.ssh
    注: -a 显示隐藏文件
+9.将远程仓库与本地仓库关联，之后把本地仓库的内容推送到GitHub仓库中
+   命令为：
+		git remote add origin http://github.com/qianyuzhang/learngit.git
+		其中qianyuzhang 是我在GitHub中注册的用户名，learngit是我在GitHub中建的仓库（repositories），
+		    origin 是远程库的名字，这是git的默认叫法
+	命令 ：git push -u origin master  
+		这一步的命令就是把本地库的所有内容推送到远程库上；
+	注意：
+	     将本地库的内容推送到远程用git push 命令，实际上是吧当前的分支master推送到远程上。
+10.从现在开始，只要本地commit，就可以通过：git push origin master 命令 把本地master分支的最新修改推送到GitHub上；
