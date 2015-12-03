@@ -83,8 +83,12 @@ git commit -m “提交的说明”
 		查看分支 git branch  ;创建分支：git branch <name>;
 		切换分支 git checkout <name>  ;创建+切换分支 git checkout -b <name>  ;
 		合并某分支到当前分支 git merge <name>;
-		删除分支 git branch -d <name>
-13.解决冲突 相关	
+		删除分支 git branch -d <name>	
+13.解决冲突
+	人生不如意之事十之八九，合并分支往往不是一帆风顺的，
+	准备新的分支 dev1 ，并作修改，之后在该分支上提交；
+	
+
 		
 		
 		  
