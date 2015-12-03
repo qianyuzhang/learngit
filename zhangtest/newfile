@@ -57,3 +57,27 @@ git commit -m “提交的说明”
 		 git clone git@github.com:qianyuzhang/studygit.git
 	注意：Git支持多种协议，包括https（比较慢），但是通过ssh支持的原生的git协议最快。
 11.分支管理
+	Git 的分支是与众不同的，无论创建、切换和删除分支，Git 在1秒钟之内就能完成，无论你的版本库是1个文件还是1万个文件。
+	创建与合并分支
+	实战：
+		创建dev分支，并切换到dev分支
+		命令：
+			git checkout -b dev
+			等价于：
+			     git branch dev
+				 git checkout dev
+		之后，可以采用git branch 查看当前分支，其中，分支前面有“*”的是指当前分支；
+		将分支切换到dev上之后，我们就可以正常额提交了；
+		在dev上完成工作之后，切换到master分支上，
+		命令：
+			git checkout master
+		之后，将dev上的内容合并到master分支上，
+		命令：
+			git merge dev
+			注意：git merge 命令用于合并指定的分支到当前分支上。
+		合并完成后，可以将dev分支删除
+		命令：
+			git branch -d dev
+		
+		
+		  
