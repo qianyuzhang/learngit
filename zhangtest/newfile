@@ -46,3 +46,14 @@ git commit -m “提交的说明”
 	注意：
 	     将本地库的内容推送到远程用git push 命令，实际上是吧当前的分支master推送到远程上。
 10.从现在开始，只要本地commit，就可以通过：git push origin master 命令 把本地master分支的最新修改推送到GitHub上；
+	注意：SSH警告
+		当第一次使用Git 的clone 或 push 命令链接GitHub时会得到一个警告，输入yes,回车即可。
+11.从远程库克隆项目到本地
+	开始 在GitHub 中建立一个远程库 studygit ，记住勾选 Initialize this repository with a README，这样GitHub会自动为我们
+	创建一个README.md文件。之后，可以用命令git clone 克隆一个本地库。
+	命令：
+	     git clone http://github.com/qianyuzhang/studygit.git
+		 或者
+		 git clone git@github.com:qianyuzhang/studygit.git
+	注意：Git支持多种协议，包括https（比较慢），但是通过ssh支持的原生的git协议最快。
+11.分支管理
