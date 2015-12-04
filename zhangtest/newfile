@@ -121,6 +121,9 @@ git 分布是版本控制系统
 	开发完成之后：
 		git add new.py
 		git status
+	删除分支 git branch -d feature-new
+	强制删除分支 git branch -D feature-new
+	
 
 	 
 	 
