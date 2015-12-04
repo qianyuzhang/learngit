@@ -1,43 +1,43 @@
 git 分布是版本控制系统
 
 1.创建一个git仓库
-mkdir filename 创建一个文件夹名称
-pwd 用于显示当前目录
+	mkdir filename 创建一个文件夹名称
+	pwd 用于显示当前目录
 
 2.添加文件到git
 
-git add filename 文件名称
-git commit -m “提交的说明”
+	git add filename 文件名称
+	git commit -m “提交的说明”
 
 3.git status 查看文件是否有修改
 
-采用 git diff filename 查看具体修改的内容   ，之后用git add 和git commit 提交文件
+	采用 git diff filename 查看具体修改的内容   ，之后用git add 和git commit 提交文件
 
 4.版本回退
 
-  查看历史记录 git log
-  查看命令历史 git reflog
+    查看历史记录 git log
+    查看命令历史 git reflog
   
-  回退的命名是git reset --hard HEAD^  或者 git reset --hard 版本号
+    回退的命名是git reset --hard HEAD^  或者 git reset --hard 版本号
 5.管理修改
-  git跟踪并管理的是修改，而非文件
+    git跟踪并管理的是修改，而非文件
 6.cat filename 功能是显示文件的内容
 	git checkout 撤销修改
-	git checkout --filename 作用是把文件在工作区的修改全部撤销：
+	git checkout -- filename 作用是把文件在工作区的修改全部撤销：
 	（1）文件自修改后还没被放到暂存区，现在撤销，就是回到和版本库一模一样的状态；
 	（2）文件已添加到暂存区，之后又做了修改，现在撤销，就是回到添加到暂存区的状态。
 7.删除文件
-  （1）直接在文件夹中删除，并且提交，就行
-  （2）命令 rm filename ，之后
+   （1）直接在文件夹中删除，并且提交，就行
+   （2）命令 rm filename ，之后
        1）. 若真想把版本库中的文件删除，则需要执行 git rm filename ；git coommit -m “理由”
 	   2）. 若删错了，则需要 git checkout -- filename
 8.远程仓库
-   GitHub提供Git仓库托管服务，只要注册一个账号，就可以免费获得Git远程仓库
-   需要创建SSH Key：命令 ssh-keygen -t rsa -C “注册的邮箱”
-   生成的 .SSH 在C:/Doucments and Settings/Administrator/.ssh
-   注: -a 显示隐藏文件
+    GitHub提供Git仓库托管服务，只要注册一个账号，就可以免费获得Git远程仓库
+    需要创建SSH Key：命令 ssh-keygen -t rsa -C “注册的邮箱”
+    生成的 .SSH 在C:/Doucments and Settings/Administrator/.ssh
+    注: -a 显示隐藏文件
 9.将远程仓库与本地仓库关联，之后把本地仓库的内容推送到GitHub仓库中
-   命令为：
+    命令为：
 		git remote add origin http://github.com/qianyuzhang/learngit.git
 		其中qianyuzhang 是我在GitHub中注册的用户名，learngit是我在GitHub中建的仓库（repositories），
 		    origin 是远程库的名字，这是git的默认叫法
@@ -86,19 +86,20 @@ git commit -m “提交的说明”
 		删除分支 git branch -d <name>	
 13.解决冲突
 	人生不如意之事十之八九，合并分支往往不是一帆风顺的，
-	准备新的分支 dev1 ，并作修改，之后在该分支上提交；
-	之后，切换到分支master，修改之后提交；
-	之后，在master下，git merge dev1 ，此时产生了冲突，在文件中可以看到冲突，手动解决之后，提交即可。
-	注意：采用命令：git log --graph   可以看到分支合并图
+		准备新的分支 dev1 ，并作修改，之后在该分支上提交；
+		之后，切换到分支master，修改之后提交；
+		之后，在master下，git merge dev1 ，此时产生了冲突，在文件中可以看到冲突，手动解决之后，提交即可。
+	注意：
+		采用命令：git log --graph   可以看到分支合并图
 14.分支管理策略
 	通常，合并分支的时候，如果可能，Git会用Fast forward 模式，但是这种模式下，删除分支后，会丢掉分支的信息，如果要强制
 	禁用 Fast forward 模式，Git就会在merge时生成一个新的commit，这样从分支历史就可以看出分支信息。
 	下面实战一下--no--ff 方式的git merge：
-	 首先，创建并切换到分支dev：git checkout -b dev；修改之后，提交：git add newfile，git commit -m "add merge"。
-	 之后，切换到master ：git checkout master。
-	 之后，准备合并dev 分支，注意：--no--ff参数表示禁用 fast forward；
-	 git merge --no--ff -m "merge with noff" dev
-	 合并之后，采用git log看分支历史：git log --graph --pretty=oneline --abbrev-commit
+		首先，创建并切换到分支dev：git checkout -b dev；修改之后，提交：git add newfile，git commit -m "add merge"。
+		之后，切换到master ：git checkout master。
+		之后，准备合并dev 分支，注意：--no--ff参数表示禁用 fast forward；
+		git merge --no--ff -m "merge with noff" dev
+		合并之后，采用git log看分支历史：git log --graph --pretty=oneline --abbrev-commit
 	 
 	 分支策略：
 		在实际开发中，我们应该按照几个基本原则进行分支处理：
