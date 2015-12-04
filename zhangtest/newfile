@@ -115,7 +115,8 @@ git 分布是版本控制系统
 	最后，恢复工作现场的方法：
 		1）. 用git stash apply 恢复，但是恢复后，stash内容并不删除你需要用 git stash drop 来删除；
 		2）. 用git stash pop 命令恢复，恢复的同时把stash的内容删除。
-19.
+16.feature分支
+	
 	 
 	 
 	
