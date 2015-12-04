@@ -114,12 +114,16 @@ git commit -m “提交的说明”
 	最后，恢复工作现场的方法：
 		1）. 用git stash apply 恢复，但是恢复后，stash内容并不删除你需要用 git stash drop 来删除；
 		2）. 用git stash pop 命令恢复，恢复的同时把stash的内容删除。
-19.feature分支
+16.feature分支
 	开发一个新功能。
 		git checkout -b feature-new
 	开发完成之后：
 		git add new.py
 		git status
+	删除分支 git branch -d feature-new
+	强制删除分支 git branch -D feature-new
+	
+
 	 
 	 
 	
