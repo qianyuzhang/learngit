@@ -116,7 +116,12 @@ git 分布是版本控制系统
 		1）. 用git stash apply 恢复，但是恢复后，stash内容并不删除你需要用 git stash drop 来删除；
 		2）. 用git stash pop 命令恢复，恢复的同时把stash的内容删除。
 16.feature分支
-	
+	开发一个新功能。
+		git checkout -b feature-new
+	开发完成之后：
+		git add new.py
+		git status
+
 	 
 	 
 	
