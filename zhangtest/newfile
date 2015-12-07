@@ -179,7 +179,7 @@ git 分布是版本控制系统
 		cat .git/config 
 		当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中，
 		cat .gitconfig中
-	（3）
+	（3）搭建Git服务器
 		
 
 
