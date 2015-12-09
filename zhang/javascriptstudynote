@@ -1,0 +1,12 @@
+					JavaScript 相关学习
+	学习JavaScript的原因，简单粗暴的说是：因为没有选择。在Web世界里，只有JavaScript能够跨平台，跨浏览器驱动网页，与用户交互。
+	JavaScript与Java的区别：除去语法上有点像Java，其他部分基本上没啥关系。但是JavaScript也有很多设计缺陷。
+	
+	JavaScript相关注意问题
+1. javascript严格区分大小写，如果弄错了大小写，程序将会报错或者运行不正常；
+2. Infinity表示无限大，js中的比较建议用“===”
+	“==”会自动转换数据类型在比较，很多时候会得到很诡异的结果；
+	“===”不会自动转换数据类型，如果类型不一致，则返回false
+	NaN（Not a Number），NaN与其他所有值都不等，包括它自己，即NaN===NaN;返回false;
+	判断NaN的方法是isNaN，即isNaN（NaN）;返回true;
+3.
