@@ -9,4 +9,43 @@
 	“===”不会自动转换数据类型，如果类型不一致，则返回false
 	NaN（Not a Number），NaN与其他所有值都不等，包括它自己，即NaN===NaN;返回false;
 	判断NaN的方法是isNaN，即isNaN（NaN）;返回true;
-3.
+3.字符串与数组
+	字符串是不可变的，如果对字符串的某个索引进行赋值，不会有任何错误，但是也没有任何效果。
+	toUpperCase（） 把一个字符串全部变为大写；
+	toLowerCase（） 把一个字符串全部变为小写；
+	indexOf（） 会搜索指定字符串出现的位置；
+	substring（0，5） 返回指定索引区间的字串0<=x<5;
+	
+	注意：
+		直接给Array的length赋一个新的值会导致Array的大小的变化；
+		如果通过索引赋值，索引超过了范围，同样引起Array的大小的变化；
+	slice（） 截取Array的部分元素，燃火返回一个新的Array，slice（0，3）起止参数包括开始索引，不包括结束索引；
+	push（） 向Array末位添加若干元素；
+	pop（） 把Array的最后一个元素删除掉；
+	unshift（） 往数组头部添加若干元素；
+	shift（） 把数组元素的第一个元素删除；
+	sort（） 对当前Array排序；
+	reverse（） 把整个Array的元素给掉个个，即反转；
+	splice（） 修改Array的“万能方法”，它可以从指定的索引开始删掉若干元素，然后再从该位置添加若干元素。
+		eg. var arr= ['A','B','C','D','E','F'];
+			arr.splice（2,3,'H','I'）;//arr = ['A','B','H','I','F'];
+			只删不加：
+				arr.splice（2,2);//arr = ['A','B','F'];
+			只添加不删：
+				arr.splice（2,0,'c','d');//arr = ['A','B','c','d','F'];
+	concat（） 把当前Array与另一个Array链接起来，饼干会一个新Array，
+		实际上，concat（） 方法可以接受任意个与元素和Array，并且自动的把Array拆开全部添加到新的Array里。
+	join（） 把当前Array的每个元素都用指定的字符串链接起来，然后返回链接后的字符串。
+		eg. var arr = [1,2,3,4,5];
+			arr.jion('-');//1-2-3-4-5）
+4.对象
+	javascript采用{...}表示一个对象，键值以key：value形式申明，之间用“，”隔开，获取属性通过“.”操作符完成；
+	也可以采用xx['shuxingname'],来访问属性。
+	删除属性 delete xx.shuxingname  
+	如果我们要判断一个属性的存在，用“in”
+		注意：
+			用“in”判断一个属性存在，这个属性不一定是该对象的，也有可能是该对象继承的；
+			如果要判断一个属性是否是该对象自身拥有的，而不是继承得到的，可以用hasOwnProperty（）方法。
+5.Map和Set
+
+	
