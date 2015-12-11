@@ -33,7 +33,7 @@
 				arr.splice（2,2);//arr = ['A','B','F'];
 			只添加不删：
 				arr.splice（2,0,'c','d');//arr = ['A','B','c','d','F'];
-	concat（） 把当前Array与另一个Array链接起来，饼干会一个新Array，
+	concat（） 把当前Array与另一个Array链接起来，并返回一个新Array，
 		实际上，concat（） 方法可以接受任意个与元素和Array，并且自动的把Array拆开全部添加到新的Array里。
 	join（） 把当前Array的每个元素都用指定的字符串链接起来，然后返回链接后的字符串。
 		eg. var arr = [1,2,3,4,5];
@@ -46,6 +46,79 @@
 		注意：
 			用“in”判断一个属性存在，这个属性不一定是该对象的，也有可能是该对象继承的；
 			如果要判断一个属性是否是该对象自身拥有的，而不是继承得到的，可以用hasOwnProperty（）方法。
-5.Map和Set
+5.条件判断与循环
+	注意：Javascript 把null，undefined，0，NaN和空字符串“”，视为false，其他值视为true。
+	      循环的三个条件都是可以省略的，如果没有退出循环的判断条件，就必须使用break语句退出循环，否则就是死循环。
+			eg. var x=0;
+				for(;;){
+					if(x>100){
+						break;
+					}
+					x++;
+				}
+		  for...in循环，可以把一个对象的所有属性都循环出来：
+			eg. var arr={name:'jack',age:'26'};
+				for (var key in arr){
+				alert（key）；}
+6.Map和Set
+	Map是一组键值对结构，具有极快的查找速度。
+		eg. var m = new Map([['Mike',95],['Bob',85],['Tom','75']]);
+				m.get('Mike');//95
+	Map具有以下方法：
+		var m = new Map();
+			m.set('Doc',86);//添加一个新的key-value
+			m.set('Bob',59);//修改一个key-value 
+			m.has('Tom');//是否存在‘Tom’;true
+			m.get('Doc');//86
+			m.delete('Doc');//删除Tom
+			m.get('Doc');//undefined 
+		注：对于一个key只能对应一个value，所以，多次对一个key放入value，后面的值会把前面的直冲掉。
+	Set 与Map类似，是一组key的集合，但是不存储value，由于key不能重复，所以，在Set中没有重复的key。
+		eg. var s1=new Set();
+				s2 = new Set([1,2,3,4,5]);
+			注：重复元素在Set中自动被过滤；
+	Set 方法：
+		s2.add(6);
+		s2.delete(5);
+7.iterable
+	注：Array，Map和Set都属于iterable类型
+		1）具有iterable类型的集合都可以通过for...of循环遍历
+			for...in和for...of的区别  :for...of 只循环集合本身的元素
+			eg. var a=['A','B','C','D'];
+					a.name='hello';
+					for (var x in a){
+						alert(x);//A,B,C,D,name
+					}
+					for (var y of a){
+						alert(y);//A,B,C,D
+					}
+		2）iterable的内置forEach方法
+			Array   eg. var a=['A','B','C'];
+							a.forEach(function(element,index,array){
+								alert(element);
+							});
+							//element 当前元素的值
+							//index 指向当前的索引
+							//array 指向array对象本身
+			Set 与Array类似，但是Set没有索引，前两个参数都是元素本身
+					eg. var a=new Set(['A','B','C']);
+							a.forEach(function (element,sameelement,set){
+								alert(element);
+							});
+			Map 的回调函数参数依次是value，key，map本身
+					eg. var a = new Map([['A',96],['B',85],['C',75]]);
+							a.forEach(function(value,key,map){
+								alert(value);
+							});
+			以上三个，可以综合为一个：
+					eg. var a=['A','B','C'];
+							a.forEach(function(element){
+								alert(element);
+							});
+8.函数
+	
+								
+				
+	
 
 	
