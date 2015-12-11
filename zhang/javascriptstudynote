@@ -116,7 +116,13 @@
 								alert(element);
 							});
 8.函数
-	
+	1)函数的定义方法：function abs(x){...}
+					  var abs = function(x){...}
+	2）arguments：
+		JavaScript还有一个免费赠送的关键字arguments，它只在函数每步起作用，并且永远指向当前函数的调用者传入的所有参数。
+		实际上，arguments最常用于判断传入参数的个数。
+	3）rest参数：
+		rest参数只能写在最后，前面用...标识。
 								
 				
 	
