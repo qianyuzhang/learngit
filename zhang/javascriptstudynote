@@ -212,8 +212,103 @@
 					(123).toString()
 10.Date
 		Date对象用来表示时间和日期
+		要获取系统的当前时间，采用：
+		var now=new Date();
+		创建时间和日期的Date对象，用：
+		var d=new Date(2015,11,16,15,22,30,123);
+		注：javascript的日期中月份的表示范围用整数0~11表示，其中0表示1月份，以此类推。
+		var d=Date.parse('2015-12-16 15:25:30.123+...');
 		
-	
+11.RegExp
+	1）Javascript中，正则表达式是一种用来匹配字符串的强有力的武器。
+		在正则表达式中，如果直接给出字符，就是精确匹配
+		但是也可以用一些符号进行匹配，如下：
+		(1) \d ：匹配一个数字
+			\w ：匹配一个数字或字母
+			 . ：可以匹配任意字符
+			 * ：表示任意个字符，包括0个
+			 + ：>=1个字符
+			 ？：0或1个字符
+			{n}：表示n个字符
+			{n,m}：表示n-m个字符
+			 \s：可以匹配一个空格，也包括Tab等空白符
+			 注意：特殊字符在js中要用“\”进行转义			 
+		(2)进阶
+			要做到更精确的匹配，可以用“[]”表示范围。
+			eg. [0-9a-zA-Z\_] 可以匹配字母数字和下划线
+				A|B 可以匹配A或B
+				^ 表示行的开头   ^\d 表示必须以数字开头
+				$ 表示行的结束   
+		(3)javascript有两种方式创建正则表达式
+			一、直接通过/正则表达式/写出来
+			二、通过 new RegExp('正则表达式')创建一个RegExp对象；
+				eg. var reg1=/ABC\_001/;
+						reg2=new RegExp('ABC\\_001');//注意字符串的转义问题
+		(4)RegExp对象的test()方法用于测试给定的字符串是否符合条件：
+				eg. var reg=/^\d{3}\_\d{3,8}$/;
+						reg.test('010-12345');//true
+						reg.test('010-12345x');//false
+						reg.test('010 12345');//false
+		(5)切分字符串
+				采用split()
+				eg  'a b  c'.split(' ');//['a','b',' ','c']
+					'a b  c'.split(/\s+/);//['a','b,'c']
+					'a,b,c d'.split(/[\s\,]+);//['a','b,'c','d']
+		(6)分组
+				用()表示的就是要提取分组
+					eg. ^(\d{3})-(\d{3,8})$
+					re = /^(\d{3})-(\d{3,8})$/;
+					re.exce('010-123456');//['010-123456','010','123456']
+				如果正则表达式上定义了组，则就可以在RegExp对象上用exec()方法取出字串，方法失败时，返回null。
+		(7)贪婪匹配
+				注：正则表达式默认是贪婪匹配，加个？就可以让\d+采用非贪婪匹配
+				eg. var re=/^(\d+)(0*)$/
+						re.exec(1023000);//['102300','1023000','']
+						re1=/^(\d+?)(0*)$/
+						re1.exec(1023000);//['102300','1023','000']
+				
+		(8)全局搜索
+			javascript的正则表达式还有几个特殊的标志，其中最常用的是g，表示全局匹配。
+				eg. var r1=/test/g;
+				=>  var r2=new RegExp('test','g');
+			全局匹配可以多次执行exec方法来搜索一个匹配的字符串，当我们指定g标志后，每次运行exec()，正则表达式本身会更新
+			lastIndex属性，表示上一次匹配到的最后索引。
+				eg. var s='Javascript,VBscript,Jscript';
+					var re=/[a-zA-Z]+script/g;
+					re.exec(s);//['Javascript']
+					re.lastIndex;//10
+					re.exec(s);//['VBscript']
+					re.lastIndex;//19
+					re.exec(s);//['Jscript']
+					re.lastIndex;//27
+					re.exec(s);//null
+			注：全局搜索，不能使用/^...$/,那样最多只会匹配一次
+				还可以指定i标志，表示忽略大小写；m标志，表示执行多行匹配。
+12.JSON(Javascript Object Notation) 是一种数据交换格式
+	JSON 的几种数据类型：
+		number：和Javascript 的number一致；
+		boolean：和Javascript 的boolean一致；
+		string：和Javascript 的string一致；
+		null：和Javascript 的null一致；
+		array：Javascript 的Array的表达方式--[]；
+		object：Javascript 的{。。。}的表达方式；
+	注：JSON字符集是UTF-8，JSON字符串规定必须使用“”双引号，object的键页必须用双引号。
+13.面向对象编程
+	两个基本概念：类，是对象类型的模板；实例，是根据类创建的对象。
+	但是javascript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象教程。
+	采用object.create()方法传入一个原型对象
+		eg. var arr=[1,2,3];
+		其原型链是：arr->Array.prototype->object.prototype->null
+		eg. function foo(){return 0;}
+		其原型链是：foo->Function.prototype->object.prototype-null
+	构造的函数需要用new来调用
+		eg. function student(name){
+				this.name=name;
+				this.hello='hello';
+			}
+			var xiaoming=new student('xiaoming');
+			其原型链是：xiaoming->student.prototype->object.prototype->null
+14.浏览器相关
 								
 				
 	
