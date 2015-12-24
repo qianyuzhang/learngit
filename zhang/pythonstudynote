@@ -1,0 +1,28 @@
+											Python教程
+		Python可以开发的应用：网络应用，包括网站后台服务等等
+							其次，是许多日常需要的小工具，包括系统管理员需要的脚本任务等
+						缺点：运行速度慢，代码不能加密
+1.安装Python
+	windows下安装：Python解释器（负责运行Python程序的），命令交互，简单的集成开发环境
+	安装完成后，在命令提示符中输入python
+	我们下载安装好python2.7.11后，就直接获得了一个官方版本的解释器CPython
+2.进入Python 
+	>python
+	>>>输入代码
+  退出python：exit()
+  运行hello.py文件 
+    >python hello.py
+  输出
+	>print '123','345'
+	字符串之间用‘,’隔开，‘,’会输出一个空格
+  输入
+    采用raw_input(),可以让用户输入字符串并放入一个变量里
+	eg.
+	>>>name=raw_input()  回车
+	123
+	>>>name
+	'123'
+	还可以通过>>>print name
+				123
+	也可以 >>>name=raw_input('提示的文字')
+3.python基础
