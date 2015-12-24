@@ -1,0 +1,49 @@
+					Node.js
+	1. 安装Node.js之后，在命令提示符中输入
+		node -v ，可见node的版本号，
+		退出Node.js需要按两次ctrl+C
+	2.nmp，是Node.js的宝管理工具（package manager）
+		输入 nmp -v 可见其版本号
+	3.之后，在Notepad++中编写javascript代码：
+		eg. 'use strict';//以严格模式运行代码，避免各种潜在陷阱
+			console.log('Hello World!');//打印
+		将以上代码存储到firstjs.js 中，
+		>node firstjs.js    执行js文件
+		也可进入node交互式环境
+		>node
+		>输入js代码
+	4.模块
+		使用模块最大的好处是大大提高了代码的可维护性
+		hello.js
+			'use strict';
+			var s='Hello';
+			function greet(name){
+				console.log(s+','+name+'!');
+			}
+			module.exports=greet;//意思是，把函数greet作为模块的输出暴露出去，这样其他模块就可调用greet函数了
+			
+		在main.js中调用hello模块的greet函数
+		main.js
+			'use strict';
+			var greet=require('./hello');//引入hello模块
+			var m='Michael';
+			greet(m);//Hello,Michael!
+		>node main.js
+		Hello,Michael!
+		以上这种模块加载机制称为CommonJS规范
+		在这种规范下：
+		1）一个模块想要对外暴露变量（函数也是变量），可以用
+			module.exports=variable;
+		2）一个模块想要引用其他模块的变量，用
+			var ref=require('module_name');
+			就拿到了引用模块的变量
+	5.对module.exports赋值
+		function hello(){...}
+		function greet(){...}
+		module.exports={
+			hello:hello,
+			greet:greet
+		}
+		或者
+		exports.hello=hello;
+		exports.greet=greet;
