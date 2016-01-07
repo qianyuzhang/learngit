@@ -87,4 +87,72 @@
 				}
 			}
 			注意：通过以创建的对象来访问成员变量和成员方法。
+11.源文件的声明规则
+	1）一个源文件只能有一个public类；
+	2）一个源文件可以有多个非public类；
+	3）源文件的名称应该与public类的名称保持一致；
+	4）如果一个类定义在某一个包中，那么package语句应该在源文件的首行；
+	5）如果源文件包含import语句，那么应该放在package语句和类定义之间，如果没有package语句，那么import语句应该在源文件中最前面。
+12.Import语句
+	就是用来提供一个合理的路径，是的编译器可以找到某个类
+		eg. import java.io.*;//该命令将会命令编辑器载入java_installation/java/io路径下的所有类。
+13.Java有两大数据类型
+	内置的数据类型（byte(8),short(16),int(32),long(64),float(32),double(64),boolean,char）
+	引用数据类型：由类的构造函数创建，变量一旦声明后，类型就不能改变了。
+	常量，一般用大写字母表示，常量（final）
+	实例变量：声明在一个类中，但在方法、构造函数和语句块外。实例变量有默认值。
+			其中，数值型默认为0，布尔型默认为false，引用类型变量的默认值为null。
+	注：类变量被声明为public static final类型时，类变量名称必须使用大写。
+14.Java访问权限
+	Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问
+	Java指出4中不同的访问权限：
+		1）默认的default，不使用任何关键字，在同一包内可见，不使用任何修饰符；
+		2）私有的，以private修饰符指定，在同一类内可见
+		3）共有的，public修饰符，对所有类可见；
+		4）受保护的protected，对同一包内的类和所有的子类可见；
+	访问控制与继承
+	方法继承的规则：
+		1）父类中声明为public的方法在子类中也必须为public
+		2）弗雷中声明为protected的方法在子类中要么声明为protected，要么声明为public，但是不能声明为private
+		3）父类中默认修饰符声明的方法，能够在子类中声明为private
+		4）父类中声明为private的方法不能被继承。
+	非访问修饰符
+		static：用来创建类方法和类变量
+		Final：用来修饰类方法和变量
+		Abstract：用来创建抽象类和抽象方法
+		Synchronized和volatile修饰符，主要用于线程的编程
+	  注：final修饰的类不能被继承
+		  final修饰的方法不能被继承类重新定义
+		  final修饰的变量为常量，是不可修改的。
+15.Java运算符
+	算数运算符、关系运算符、位运算符、逻辑运算符
+	条件运算符（？：）
+	instanceOf运算符，该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）
+16.Java Number类，Character类，String类
+	Number类的方法：
+		xxxValue(),compareTo(),equals(),valueOf(),toString(),
+		parseInt(),abs(),ceil(),floor(),rint(),round()......
+	Character类的方法：
+		isLetter(),isDigit(),isWhitespace(),isUpperCase(),isLowerCase(),
+		toUpperCase(),toLowerCase(),toString()......
+	String类的方法：
+		str1.concat（str2）;//链接两个字符串
+		str1.length();
+		......
+17.Java数组
+	语法：	dataType[] arrayRefvar;//首选
+			或者
+			dataType  arrayRefvar[];
+	Java语言用new操作符来创建数组，语法如下：
+		arrayRefvar = new dataType[arraySize[;
+		注意：
+			上面两条语句做了两件事：
+			1) 使用dataType创建了一个数组
+			2) 把新创建的数组的引用赋值给变量arrayRefvar
+	如何将数组变量的声明和创建出租，可以用一条语句完成，实现如下：
+		dataType[] arrayRefvar = new dataType[arraySize];
+		
+	另外，我们还可以用如下形式创建数组：
+		dataType[] arrayRefvar = {value0，value1，。。。。。。，valuek}；
+		
 			
