@@ -76,3 +76,15 @@
 								...
 							}
 						}
+10. 使用关键字new来创建一个对象，使用new创建对象时，会调用构造方法，初始化对象
+	eg.		public class Puppy{
+				public Puppy(String name){
+					//这个构造器只有一个参数
+					System.out.println("Passed Name :"+name);
+				}
+				public static void main(String []args){
+					Puppy myPuppy=new Puppy("Tom")'
+				}
+			}
+			注意：通过以创建的对象来访问成员变量和成员方法。
+			
